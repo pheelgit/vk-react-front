@@ -1,0 +1,5 @@
+{
+  "javascript.implicitProjectConfig.checkJs": false,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.check.npmIsInstalled": false
+}

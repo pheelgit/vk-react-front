@@ -1,0 +1,7 @@
+.form {
+  @apply mx-auto flex w-fit  flex-col items-center justify-items-start gap-6 bg-slate-400 p-8;
+}
+
+.registerForm {
+  @apply mx-auto mt-10 flex w-80 flex-col gap-6 bg-white p-6;
+}

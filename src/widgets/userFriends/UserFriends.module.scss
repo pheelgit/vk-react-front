@@ -1,0 +1,10 @@
+.wrapper {
+  @apply widget flex gap-6;
+}
+
+.card {
+  @apply flex  flex-col items-center gap-2;
+}
+.cardText {
+  @apply w-14 overflow-hidden text-ellipsis whitespace-nowrap text-center;
+}

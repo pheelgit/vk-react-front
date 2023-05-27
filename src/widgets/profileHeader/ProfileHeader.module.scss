@@ -1,0 +1,18 @@
+.head {
+  @apply widget flex;
+}
+
+.headAvatar {
+  @apply basis-['150px'];
+}
+.profile {
+  @apply flex grow items-center justify-evenly;
+
+  .profileInfo {
+    /* @apply ; */
+  }
+
+  .profileActions {
+    /* @apply bg-red-400; */
+  }
+}

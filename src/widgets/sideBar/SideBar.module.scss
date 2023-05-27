@@ -1,0 +1,6 @@
+.wrapper {
+  @apply flex flex-col;
+  a {
+    @apply py-3 hover:bg-slate-300;
+  }
+}

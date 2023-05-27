@@ -1,5 +1,7 @@
 {
   "javascript.implicitProjectConfig.checkJs": false,
   "typescript.disableAutomaticTypeAcquisition": true,
-  "typescript.check.npmIsInstalled": false
+  "typescript.check.npmIsInstalled": false,
+  "typescript.tsserver.pluginPaths": ["typescript-plugin-css-modules"]
+  "typescript.tsdk": "node_modules\\typescript\\lib",
 }

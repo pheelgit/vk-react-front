@@ -1,0 +1,17 @@
+.postTitle {
+  @apply flex items-center  px-3 py-3;
+}
+
+.friend {
+  @apply flex grow items-center gap-3;
+}
+
+.avatar {
+  @apply hover:cursor-pointer;
+}
+.title {
+  @apply hover:cursor-pointer;
+}
+.removeFriend {
+  @apply flex items-center justify-center self-stretch px-4 align-baseline hover:cursor-pointer hover:bg-slate-300;
+}

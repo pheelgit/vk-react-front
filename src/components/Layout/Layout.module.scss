@@ -1,0 +1,22 @@
+.wrapper {
+  @apply relative;
+}
+
+.headerWrapper {
+  @apply widget sticky top-0 z-10 mb-4 rounded-none border-b p-0;
+}
+.header {
+  @apply mx-auto max-w-5xl;
+}
+
+.main {
+  @apply mx-auto flex h-full max-w-5xl gap-widgets;
+}
+
+.sideBar {
+  @apply w-44 basis-44 self-start;
+}
+
+.content {
+  @apply grow;
+}

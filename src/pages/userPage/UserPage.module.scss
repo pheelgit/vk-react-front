@@ -1,0 +1,19 @@
+.wrapper {
+  @apply flex flex-col gap-widgets;
+}
+
+.head {
+  /* @apply; */
+}
+
+.main {
+  @apply flex items-start gap-widgets;
+
+  .content {
+    @apply flex grow flex-col gap-widgets;
+  }
+
+  .side {
+    @apply basis-72;
+  }
+}

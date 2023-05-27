@@ -1,0 +1,14 @@
+.wrapper {
+  @apply z-10 flex  h-full w-full gap-widgets overflow-hidden;
+
+  .title {
+    @apply flex w-44 items-center;
+  }
+  .searchPanel {
+    @apply flex grow  items-center;
+  }
+
+  .userMenu {
+    @apply flex  h-full w-auto items-center px-4 hover:cursor-pointer hover:bg-slate-300;
+  }
+}

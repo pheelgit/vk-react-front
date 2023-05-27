@@ -1,0 +1,14 @@
+.wrapper {
+  @apply widget;
+}
+
+.postTitle {
+  @apply flex gap-3;
+}
+
+.postText {
+  @apply break-all;
+}
+.postStats {
+  @apply flex w-full justify-end gap-4;
+}

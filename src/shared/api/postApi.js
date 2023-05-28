@@ -54,14 +54,3 @@ export const postApi = createApi({
     }),
   }),
 });
-
-// .head {
-//   @apply widget flex;
-// }
-
-// .headAvatar {
-//   @apply basis-['150px'];
-// }
-// .profile {
-//   @apply flex grow items-center justify-evenly;
-// }

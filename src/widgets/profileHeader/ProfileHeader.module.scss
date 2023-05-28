@@ -1,0 +1,10 @@
+.head {
+  @apply widget flex;
+}
+
+.headAvatar {
+  flex-basis: 150px;
+}
+.profile {
+  @apply flex grow items-center justify-evenly;
+}

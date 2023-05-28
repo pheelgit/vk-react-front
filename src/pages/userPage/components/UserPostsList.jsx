@@ -1,7 +1,7 @@
 import React from 'react';
 import { Post } from 'entities/index';
 import { postApi, userApi } from 'shared';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Skeleton } from 'antd';
 
@@ -23,15 +23,20 @@ export const UserPostsList = () => {
     }
   );
 
+  if (!id) {
+    return <Navigate to="login" />;
+  }
+
   return (
     <>
       {isLoading &&
         getMe?.posts?.map((postId) => (
           <Skeleton key={postId} avatar paragraph={{ row: 3 }} />
         ))}
+
       {postsList &&
         postsList?.map((post) => (
-          <Post key={post?._id} postData={{ ...post, isLoading }} />
+          <Post key={post?._id} postData={{ ...post }} />
         ))}
     </>
   );

@@ -8,7 +8,7 @@ import HeaderActions from './components/HeaderActions';
 import { Descriptions } from 'antd';
 
 // import styles from './ProfileHeader.module.scss';
-import styles from './ProfileHeader.module.scss';
+// import styles from './ProfileHeader.module.scss';
 
 export const ProfileHeader = () => {
   const { id } = useParams();
@@ -19,15 +19,17 @@ export const ProfileHeader = () => {
   );
 
   return (
-    <div className={styles.head}>
+    // <div className={styles.head}>
+    <div>
       <img
-        className={styles.headAvatar}
+        // className={styles.headAvatar}
         alt="user avatar"
         width={150}
         height={150}
         src={userData?.avatarUrl || DEFAULT_USER_AVATAR_URL}
       />
-      <div className={styles.profile}>
+      {/* <div className={styles.profile}> */}
+      <div>
         <Descriptions
           title={userData?.fullName}
           bordered

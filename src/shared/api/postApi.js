@@ -83,12 +83,6 @@ export const postApi = createApi({
         method: 'delete',
         headers: { authorization: token },
       }),
-      invalidatesTags: (result, error, id) => {
-        console.log({ result, error, id });
-        console.log(result?._id);
-        console.log(id?.postId);
-        return [{ type: 'Posts', id: result?._id }];
-      },
 
       invalidatesTags: (result, error, arg) =>
         result

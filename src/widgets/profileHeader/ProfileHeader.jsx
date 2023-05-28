@@ -7,6 +7,7 @@ import { userApi, DEFAULT_USER_AVATAR_URL } from 'shared';
 import HeaderActions from './components/HeaderActions';
 import { Descriptions } from 'antd';
 
+// import styles from './ProfileHeader.module.scss';
 import styles from './ProfileHeader.module.scss';
 
 export const ProfileHeader = () => {
@@ -29,7 +30,6 @@ export const ProfileHeader = () => {
       <div className={styles.profile}>
         <Descriptions
           title={userData?.fullName}
-          className={styles.profileInfo}
           bordered
           extra="подробнее"
           size="small"
@@ -44,7 +44,7 @@ export const ProfileHeader = () => {
           </Descriptions.Item>
         </Descriptions>
 
-        <div className={styles.profileActions}>
+        <div>
           <HeaderActions />
         </div>
       </div>

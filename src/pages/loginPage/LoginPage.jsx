@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
@@ -20,11 +20,7 @@ export const LoginPage = () => {
     skip: !token,
   });
 
-  const {
-    handleSubmit,
-    control,
-    formState: { errors, isValid },
-  } = useForm({
+  const { handleSubmit, control } = useForm({
     mode: 'onBlur',
     defaultValues: {
       email: 'witharr@ya.ru',
@@ -32,28 +28,21 @@ export const LoginPage = () => {
     },
   });
 
-  const [
-    loginUserApi,
-    {
-      isLoading,
-      isSuccess: isSuccessLogin,
-      isError: isErrorLogin,
-      data: dataLogin = {},
-    },
-  ] = authApi.useLoginUserMutation();
+  const [loginUserApi, { isError: isErrorLogin }] =
+    authApi.useLoginUserMutation();
 
-  const logFunc = async () => {
+  const logFunc = useCallback(async () => {
     dispatch(saveToken(localToken));
     if (getMeData) {
       navigate(`/${getMeData?._id}`);
     }
-  };
+  }, [getMeData, navigate, dispatch, localToken]);
 
   useEffect(() => {
     if (localToken) {
       logFunc();
     }
-  }, [getMeData]);
+  }, [getMeData, localToken, logFunc]);
 
   const onSubmitLogin = async ({ email, password }) => {
     try {

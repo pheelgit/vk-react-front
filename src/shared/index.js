@@ -3,4 +3,3 @@ export { userApi } from './api/userApi';
 export { postApi } from './api/postApi';
 export { authApi } from './api/authApi';
 export { friendApi } from './api/friendApi';
-export { useAuth } from './hooks/useAuth';

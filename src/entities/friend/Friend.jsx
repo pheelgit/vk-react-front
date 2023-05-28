@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { friendApi } from 'shared';
 import { useSelector } from 'react-redux';
 
 import { Avatar, Typography } from 'antd';

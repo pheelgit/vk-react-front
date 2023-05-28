@@ -11,14 +11,7 @@ export const postApi = createApi({
         url: `/all/${userId}`,
         headers: { authorization: token },
       }),
-      providesTags: (result) => {
-        return result
-          ? [
-              ...result?.map(({ _id }) => ({ type: 'Posts', id: _id })),
-              { type: 'Posts', id: 'LIST' },
-            ]
-          : [{ type: 'Posts', id: 'LIST' }];
-      },
+      providesTags: ['Posts'],
     }),
     createPost: builder.mutation({
       query: ({ body, token }) => ({
@@ -28,13 +21,7 @@ export const postApi = createApi({
         headers: { authorization: token },
         body,
       }),
-      invalidatesTags: (result, error, arg) =>
-        result
-          ? [
-              { type: 'Posts', id: result._id },
-              { type: 'Posts', id: 'LIST' },
-            ]
-          : [{ type: 'Posts', id: 'LIST' }],
+      invalidatesTags: ['Posts'],
     }),
     removePost: builder.mutation({
       query: ({ postId, token }) => ({
@@ -44,13 +31,7 @@ export const postApi = createApi({
         headers: { authorization: token },
       }),
 
-      invalidatesTags: (result, error, arg) =>
-        result
-          ? [
-              { type: 'Posts', id: result._id },
-              { type: 'Posts', id: 'LIST' },
-            ]
-          : [{ type: 'Posts', id: 'LIST' }],
+      invalidatesTags: ['Posts'],
     }),
   }),
 });

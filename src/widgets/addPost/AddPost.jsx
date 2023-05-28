@@ -8,15 +8,17 @@ import styles from './AddPost.module.scss';
 
 export const AddPost = () => {
   const token = useSelector((state) => state.auth.token);
-  const { data: getMe } = authApi.useGetMeQuery(token, { skip: !token });
+  const { data: getMe, refetch } = authApi.useGetMeQuery(token, {
+    skip: !token,
+  });
   const [isActive, setIsActive] = useState(false);
 
-  const [addPost, { isError, isSuccess, isLoading }] =
-    postApi.useCreatePostMutation();
+  const [addPost, { isLoading }] = postApi.useCreatePostMutation();
   const { handleSubmit, control, reset } = useForm();
 
   const handleAddPost = async (value) => {
     await addPost({ body: value, token: token });
+    refetch();
     reset();
     setIsActive(false);
   };

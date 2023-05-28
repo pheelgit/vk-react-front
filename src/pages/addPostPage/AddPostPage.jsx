@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { authApi, postApi } from 'shared';
 import { useForm, Controller } from 'react-hook-form';
 
@@ -11,13 +11,8 @@ export const AddPostPage = () => {
   const token = useSelector((state) => state.auth.token);
   const { data: getMe } = authApi.useGetMeQuery(token, { skip: !token });
   const navigate = useNavigate();
-  const [addPost, { isError, isSuccess, isLoading }] =
-    postApi.useCreatePostMutation();
-  const {
-    handleSubmit,
-    control,
-    formState: { errors, isValid },
-  } = useForm({
+  const [addPost] = postApi.useCreatePostMutation();
+  const { handleSubmit, control } = useForm({
     mode: 'onBlur',
   });
   const handleAddPost = async (value) => {

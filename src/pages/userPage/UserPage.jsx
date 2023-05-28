@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './UserPage.module.scss';
 import { UserPostsList } from './components/UserPostsList';
 import { UserFriends, AddPost, ProfileHeader } from 'widgets';
-import { authApi, friendApi } from 'shared';
+import { authApi } from 'shared';
 import { saveToken } from 'app/store/slices/authSlice';
 
 export const UserPage = () => {
@@ -18,25 +18,22 @@ export const UserPage = () => {
 
   localToken ? token || dispatch(saveToken(localToken)) : navigate('/login');
 
-  //88888888888888888
-
   const { data: getMeData } = authApi.useGetMeQuery(token, {
     skip: !token,
   });
 
-  const logFunc = async () => {
+  const logFunc = useCallback(async () => {
     if (getMeData) {
       navigate(`/${getMeData?._id}`);
     }
-  };
+  }, [getMeData, navigate]);
 
   useEffect(() => {
     if (localToken) {
       logFunc();
     }
-  }, [getMeData]);
+  }, [getMeData, localToken, logFunc]);
 
-  console.log('mounted');
   return (
     <div className={styles.wrapper}>
       <div className={styles.head}>

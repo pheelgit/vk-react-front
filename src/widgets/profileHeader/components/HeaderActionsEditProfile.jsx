@@ -1,20 +1,14 @@
-import { Button, Form, Input, Modal, Radio } from 'antd';
+import { Button, Input, Modal } from 'antd';
 import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
 import { authApi } from 'shared';
 
 export const HeaderActionsEditProfile = () => {
   const token = useSelector((state) => state.auth.token);
   const { data: getMeData } = authApi.useGetMeQuery(token, { skip: !token });
 
-  const {
-    handleSubmit,
-    control,
-    reset,
-    formState: { errors, isValid },
-  } = useForm({
+  const { handleSubmit, control, reset } = useForm({
     mode: 'onBlur',
     defaultValues: {
       fullName: getMeData?.fullName,

@@ -11,11 +11,7 @@ import { saveToken } from 'app/store/slices/authSlice';
 export const RegisterPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const {
-    control,
-    handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({
+  const { control, handleSubmit } = useForm({
     mode: 'onBlur',
     defaultValues: {
       email: '123qwe@ya.ru',
@@ -23,15 +19,8 @@ export const RegisterPage = () => {
     },
   });
 
-  const [
-    registerUser,
-    {
-      isLoadingRegister,
-      isSuccess: isSuccessRegister,
-      isError: isErrorRegister,
-      data: dataRegister = {},
-    },
-  ] = authApi.useRegisterUserMutation();
+  const [registerUser, { isError: isErrorRegister }] =
+    authApi.useRegisterUserMutation();
   const token = useSelector((state) => state.auth.token);
   const { data: userData } = authApi.useGetMeQuery(token, { skip: !token });
 

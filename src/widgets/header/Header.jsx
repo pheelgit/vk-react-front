@@ -35,7 +35,8 @@ export const Header = () => {
       <div className={styles.wrapper}>
         <div className={styles.title}>
           <NavLink to={`${getMeData?._id}`}>
-            <VKLogo />
+            <img src="/logo.png" alt="logo" />
+            <Typography children="pheel" />
           </NavLink>
         </div>
         <div className={styles.searchPanel}>search panel </div>

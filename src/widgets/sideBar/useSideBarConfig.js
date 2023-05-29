@@ -37,22 +37,22 @@ export const useSideBarConfig = () => {
         to: 'friends',
         icon: <TeamOutlined />,
       },
-      {
-        title: 'к основному',
-        to: '646395d50cb07d5cd80ac37d',
-        icon: <MessageOutlined />,
-      },
-      {
-        title: 'к второму',
-        to: '/6469f09520ef32963579c6b7',
-        icon: <MessageOutlined />,
-      },
-      {
-        title: 'к третьему',
-        to: '/6469f09520ef32963579c6b7',
-        icon: <MessageOutlined />,
-      },
-      { title: 'логин', to: '/login', icon: <UserOutlined /> },
+      // {
+      //   title: 'к основному',
+      //   to: '646395d50cb07d5cd80ac37d',
+      //   icon: <MessageOutlined />,
+      // },
+      // {
+      //   title: 'к второму',
+      //   to: '/6469f09520ef32963579c6b7',
+      //   icon: <MessageOutlined />,
+      // },
+      // {
+      //   title: 'к третьему',
+      //   to: '/6469f09520ef32963579c6b7',
+      //   icon: <MessageOutlined />,
+      // },
+      // { title: 'логин', to: '/login', icon: <UserOutlined /> },
     ]);
   }, [getMeData, token]);
 

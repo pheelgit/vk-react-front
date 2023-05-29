@@ -64,7 +64,7 @@ export const Post = ({ postData }) => {
           <Statistic value={postData?.viewsCount} prefix={<EyeOutlined />} />
           <Statistic value={postData?.viewsCount} prefix={<HeartFilled />} />
         </div>
-        <Typography>{postData?._id}</Typography>
+        {/* <Typography>{postData?._id}</Typography> */}
       </Card>
     </>
   );

@@ -3,7 +3,17 @@
 
   .title {
     @apply flex w-44 items-center;
+    a {
+      @apply flex w-full gap-3;
+      img {
+        @apply h-8;
+      }
+      article {
+        @apply self-center text-xl font-bold text-gray-600;
+      }
+    }
   }
+
   .searchPanel {
     @apply flex grow  items-center;
   }

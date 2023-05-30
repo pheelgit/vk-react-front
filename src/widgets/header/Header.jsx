@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { authApi } from 'shared';
-import { VKLogo } from './VKLogo';
 
 import { Avatar, Dropdown, Typography } from 'antd';
 import { UserOutlined } from '@ant-design/icons';
